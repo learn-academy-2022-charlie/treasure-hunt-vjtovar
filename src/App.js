@@ -9,7 +9,10 @@ class App extends Component {
       board: ["?", "?", "?", "?", "?", "?", "?", "?", "?"]
     }
   }
-
+  handleGamePlay = (index) => {
+    alert(index)
+  }
+  
   render() {
     return(
       <>
@@ -17,7 +20,10 @@ class App extends Component {
         <div className="game-board">
           {this.state.board.map((value, index) => {
             return (
-              <Square value={value} key={index}/>
+              <Square 
+                value={value} 
+                key={index} 
+                handleGamePlay={this.handleGamePlay}/>
           )
         })}
         </div>
